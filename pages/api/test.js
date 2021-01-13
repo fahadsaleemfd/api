@@ -1,7 +1,9 @@
 var fs = require('fs')
 export default function handler(req, res) {
-    fs.open('mynewfile2.txt', 'w', function (err, file) {
+    fs.writeFile('mynewfile2.txt', 'This is my text', function (err) {
         if (err) throw err;
         res.status(200).json({ text: 'Hello' })
       });
+        
+   
   }
